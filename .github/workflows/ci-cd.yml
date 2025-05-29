@@ -55,7 +55,7 @@ jobs:
 
       - name: Initialize database
         run: |
-          PGPASSWORD=test_password psql -h localhost -U test_user -d test_db -f init.sql
+          PGPASSWORD=test_password psql -h localhost -U test_user -d postgres -f init.sql
 
       - name: Run tests
         run: go test -v ./tests/...
