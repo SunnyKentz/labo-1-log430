@@ -1,0 +1,59 @@
+@startuml
+hide circle
+title MDD du système POS
+class Produit {
+    - id:int
+    - nom:string
+    - prix:float
+    - category:string
+    - quantite:int
+}
+class DBProxy <<Singleton>>{
+    - username:string
+    - password:string
+    --
+    + GetCaissier(nom:string):bool
+    + ListProduit():[]Produit
+    + ListTransactions(): []Transaction
+    + EnregistrerTransaction(t:Transaction)
+    + GetProduitParID(id:int):Produit
+    + GetProduitsParNomWildcard(nomWildcard:string) :[]Produit
+}
+class Transaction{
+    - id:int
+    - date:Date
+    - total:float
+    - type:string
+    - produitIDs:string
+    - caisse:string
+    --
+    + Executer()
+}
+class Logger <<Singleton>>{
+    - file:string
+    --
+    + Info(info:string)
+    + Error(error:string)
+    + Transaction(t:Transaction, msg:string)
+    + GetFile():string
+}
+
+class Caissier {
+    - nom:string
+    - transactions:[]Transaction
+    --
+    + InitianliserPOS()
+    + AfficherProduits():[]Produit
+    + AfficherTransactions():[]Transaction
+    + TrouverProduit(nomPartiel:string):Produit
+    + FaireUneVente(produitID:int):Transaction
+    + FaireUnRetour(produitID:int):Transaction
+    + AjouterALaCart(produitID:int):float
+    + RetirerDeLaCart(produitID:int):float
+    + QuantiteDansLaCart(produitID:int):int
+}
+
+Caissier "1" -- "0..*" Transaction
+Transaction "1" -- "1" Produit
+
+@enduml

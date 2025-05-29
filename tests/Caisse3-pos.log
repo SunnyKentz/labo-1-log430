@@ -1,0 +1,23 @@
+[2025-05-29 04:06:59][POS]: Caisse 3 initialisé
+[2025-05-29 04:06:59][POS]: Caisse 3 initialisé
+[2025-05-29 04:06:59][Caisse 3][TRANSACTION] Type: VENTE : Vente effectuée, Total: 4.80, Produit: 1,1,1,1
+[2025-05-29 04:06:59][Caisse 3][TRANSACTION] Type: VENTE : Vente effectuée, Total: 2.50, Produit: 2
+[2025-05-29 04:06:59][Caisse 3][TRANSACTION] Type: RETOUR : Retour effectué, Total: -2.50, Produit: 2
+[2025-05-29 04:08:30][POS]: Caisse 3 initialisé
+[2025-05-29 04:08:30][POS]: Caisse 3 initialisé
+[2025-05-29 04:09:09][POS]: Caisse 3 initialisé
+[2025-05-29 04:09:09][POS]: Caisse 3 initialisé
+[2025-05-29 04:09:19][POS]: Caisse 3 initialisé
+[2025-05-29 04:09:19][POS]: Caisse 3 initialisé
+[2025-05-29 04:09:19][Caisse 3][TRANSACTION] Type: VENTE : Vente effectuée, Total: 11.20, Produit: 3,3,3,3
+[2025-05-29 04:09:19][Caisse 3][TRANSACTION] Type: VENTE : Vente effectuée, Total: 4.50, Produit: 4
+[2025-05-29 04:09:19][Caisse 3][TRANSACTION] Type: RETOUR : Retour effectué, Total: -4.50, Produit: 4
+[2025-05-29 04:11:07][POS]: Caisse 3 initialisé
+[2025-05-29 04:11:07][POS]: Caisse 3 initialisé
+[2025-05-29 04:11:15][POS]: Caisse 3 initialisé
+[2025-05-29 04:11:15][POS]: Caisse 3 initialisé
+[2025-05-29 04:13:41][POS]: Caisse 3 initialisé
+[2025-05-29 04:13:41][POS]: Caisse 3 initialisé
+[2025-05-29 04:13:41][Caisse 3][TRANSACTION] Type: VENTE : Vente effectuée, Total: 11.70, Produit: 5,5,5
+[2025-05-29 04:13:41][Caisse 3][TRANSACTION] Type: VENTE : Vente effectuée, Total: 1.30, Produit: 6
+[2025-05-29 04:13:41][Caisse 3][TRANSACTION] Type: RETOUR : Retour effectué, Total: -1.30, Produit: 6

@@ -1,0 +1,16 @@
+@startuml
+left to right direction
+actor "Caissier/Caissière" as fc
+rectangle POS {
+  usecase "Rechercher un produit" as UC1
+  usecase "Vente de produit" as UC2
+  usecase "Retour de produit" as UC3
+  usecase " Consulter l'état du stock des produits" as UC4
+  usecase " Consulter les transactions" as UC5
+}
+fc --> UC1
+fc --> UC2
+fc --> UC3
+fc --> UC4
+fc --> UC5
+@enduml

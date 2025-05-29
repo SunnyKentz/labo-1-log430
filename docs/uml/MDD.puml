@@ -1,0 +1,37 @@
+@startuml
+
+hide circle
+hide method
+title MDD du système POS
+class Produit {
+  id:int
+  nom:string
+  prix:float
+  category:string
+  quantite:int
+}
+class DBProxy{
+ username:string
+ password:string
+}
+class Transaction{
+ total:float
+ type:string
+ produitIDs:[]int
+ caisse:string
+}
+class Logger{
+ file:string
+}
+
+class Caissier {
+ nom:string
+}
+
+Caissier --> Transaction : fait des
+Caissier -> Produit : consulte des
+Transaction -> Produit: gère des
+Transaction --> Logger: s'enregistre dans
+Produit --> DBProxy : provient de
+
+@enduml
