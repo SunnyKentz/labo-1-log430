@@ -1,0 +1,15 @@
+@startuml
+hide footbox
+title Diagramme de Séquence AjouterALaCart(produitID:int)
+
+actor       Actor       as a
+participant Caissier as c
+database    db    as d
+'participant logger as l
+a -> c : AjouterALaCart(3)
+c -> d : GetProduitParID(3)
+c <-- d : return produit
+|||
+c -> c : cart.append(produit)
+a <-- c : return total:float
+@enduml

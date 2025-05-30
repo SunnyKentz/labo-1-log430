@@ -1,0 +1,11 @@
+@startuml
+hide footbox
+title Diagramme de Séquence RetirerDeLaCart(produitID:int)
+
+actor       Actor       as a
+participant Caissier as c
+'database    db    as d
+'participant logger as l
+a -> c : RetirerDeLaCart(2)
+a <-- c : return total:float
+@enduml

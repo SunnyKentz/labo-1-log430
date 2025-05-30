@@ -1,12 +1,8 @@
-## Labo 0
+## Labo 1
 
 ### Explication de l'application:
 
 l'application s'execute sur le terminal
-
-J'ai choisi Go comme language pour ce projet, car j'aime ce language et je veux en apprendre plus dessus.<br>
-J'ai choisi make comme build tool pour me facilité la vie, car je peux exectuter plusieurs commandes rapidement.<br>
-J'ai choisi fiber comme server, car c'est simililaire avec expresseJS qui est un server basé sur des middleware.
 
 ### Comment run :
 ```

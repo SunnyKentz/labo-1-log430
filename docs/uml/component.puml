@@ -1,0 +1,16 @@
+@startuml
+skinparam componentStyle uml2
+
+rectangle "Server Side" {
+    component PosgreSQL <<Database>> as pg
+}
+rectangle "Client Side" {
+    
+    component "GORM" <<ORM>> as orm{
+    }
+    component "BubbleTea" <<Terminal UI Framework>> as tui{
+    }
+}
+
+[orm] -- [pg] : <<uses>>
+@enduml

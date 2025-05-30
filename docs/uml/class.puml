@@ -12,37 +12,54 @@ class DBProxy <<Singleton>>{
     - username:string
     - password:string
     --
+    + Init()
+    - connect()
     + GetCaissier(nom:string):bool
+    + SetupLog()
+    + OccuperCaisse(nom:string)
+    + LibererCaisse(nom:string)
     + ListProduit():[]Produit
     + ListTransactions(): []Transaction
+    + GetTransactionByID(transactionID:int):Transaction
+    + SetTransactionToDejaRetourne(transactionID:int)
     + EnregistrerTransaction(t:Transaction)
     + GetProduitParID(id:int):Produit
     + GetProduitsParNomWildcard(nomWildcard:string) :[]Produit
 }
 class Transaction{
-    - id:int
-    - date:Date
-    - total:float
-    - type:string
-    - produitIDs:string
-    - caisse:string
+    + id:int
+    + date:Date
+    + Montant:float
+    + type:string
+    + produitIDs:string
+    + caisse:string
+    + Deja_retourne:bool
     --
-    + Executer()
 }
 class Logger <<Singleton>>{
-    - file:string
+    - file:File
     --
+    + Init(name:string)
+    - setPOSName(name string)
     + Info(info:string)
     + Error(error:string)
     + Transaction(t:Transaction, msg:string)
-    + GetFile():string
+    + GetFile():File
 }
 
-class Caissier {
+class Caisse {
+    + ID:int    
+	+ Nom:string 
+	+ Occupe:bool 
+}
+
+class Caissier <<Singleton>>{
     - nom:string
-    - transactions:[]Transaction
+    - cart:[]Produit
     --
+    + Nom() string
     + InitianliserPOS()
+    + FermerPOS()
     + AfficherProduits():[]Produit
     + AfficherTransactions():[]Transaction
     + TrouverProduit(nomPartiel:string):Produit
@@ -51,9 +68,9 @@ class Caissier {
     + AjouterALaCart(produitID:int):float
     + RetirerDeLaCart(produitID:int):float
     + QuantiteDansLaCart(produitID:int):int
+    + ViderLaCart()
 }
 
-Caissier "1" -- "0..*" Transaction
-Transaction "1" -- "1" Produit
+Caissier "1" -- "0..*" Produit
 
 @enduml

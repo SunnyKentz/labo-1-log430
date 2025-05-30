@@ -1,0 +1,24 @@
+@startuml
+node "Machine Virtuel" <<Ubuntu 24.04>> {
+    node "Postgres Container" <<Docker>> {
+        database "PostgreSQL Database" <<SQL DB>> as db{
+        }
+    }
+}
+node "Machine Caisse 1" <<Ubuntu 24.04>> {
+    component caisse-app as app1 {
+    }
+}
+node "Machine Caisse 2"<<Ubuntu 24.04>> {
+    component caisse-app as app2 {
+    }
+}
+node "Machine Caisse 3"<<Ubuntu 24.04>> {
+    component caisse-app as app3 {
+    }
+}
+
+db --- app1 : TCP
+db --- app2 : TCP
+db --- app3 : TCP
+@enduml

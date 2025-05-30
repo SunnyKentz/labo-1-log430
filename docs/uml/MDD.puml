@@ -2,7 +2,9 @@
 
 hide circle
 hide method
+
 title MDD du système POS
+
 class Produit {
   id:int
   nom:string
@@ -26,12 +28,14 @@ class Logger{
 
 class Caissier {
  nom:string
+ cart:[]Produit
 }
 
 Caissier --> Transaction : fait des
 Caissier -> Produit : consulte des
 Transaction -> Produit: gère des
 Transaction --> Logger: s'enregistre dans
+Transaction --> DBProxy: s'enregistre dans
 Produit --> DBProxy : provient de
 
 @enduml

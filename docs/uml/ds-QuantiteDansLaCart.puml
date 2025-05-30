@@ -1,0 +1,11 @@
+@startuml
+hide footbox
+title Diagramme de Séquence QuantiteDansLaCart(produitID:int)
+
+actor       Actor       as a
+participant Caissier as c
+'database    db    as d
+'participant logger as l
+a -> c : QuantiteDansLaCart(1)
+a <-- c : return count:int
+@enduml

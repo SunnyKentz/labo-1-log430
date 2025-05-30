@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+title Diagramme de Séquence AfficherProduits()
+
+actor       Actor       as a
+participant Caissier as c
+database    db    as d
+'participant logger as l
+a -> c : AfficherTransactions()
+c -> d : ListTransactions()
+c <-- d : return []Transaction
+a <-- c : return []Transaction
+@enduml

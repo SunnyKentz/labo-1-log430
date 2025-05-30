@@ -1,0 +1,11 @@
+@startuml
+hide footbox
+title Diagramme de Séquence FermerPOS()
+
+actor       Actor       as a
+participant Caissier as c
+database    db    as d
+'participant logger as l
+a -> c : FermerPOS()
+c -> d : LibererCaisse("Caisse 1")
+@enduml

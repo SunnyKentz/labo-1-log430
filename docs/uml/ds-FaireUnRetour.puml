@@ -1,0 +1,19 @@
+@startuml
+hide footbox
+title Diagramme de Séquence FaireUnRetour(transactionID:int)
+
+actor       Actor       as a
+participant Caissier as c
+participant Transaction as t
+database    db    as d
+participant logger as l
+a -> c : FaireUnRetour(2)
+c -> d : GetTransactionByID(2)
+c <-- d : return transaction
+|||
+c -> d : EnregistrerTransaction(transaction)
+|||
+c -> d : SetTransactionToDejaRetourne(2)
+|||
+c -> l : Transaction(transaction, "Retour effectuée")
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+hide footbox
+title Diagramme de Séquence FaireUneVente()
+
+actor       Actor       as a
+participant Caissier as c
+participant Transaction as t
+database    db    as d
+participant logger as l
+a -> c : FaireUneVente()
+c -> t : transaction = new Transaction
+c <-- t
+|||
+c -> d : EnregistrerTransaction(transaction)
+|||
+c -> l : Transaction(transaction, "Vente effectuée")
+@enduml

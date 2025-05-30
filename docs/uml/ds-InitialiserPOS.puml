@@ -1,0 +1,15 @@
+@startuml
+hide footbox
+title Diagramme de Séquence InitialiserPOS()
+
+actor       Actor       as a
+participant Caissier as c
+database    db    as d
+participant logger as l
+a -> c : InitialiserPOS()
+c -> d : GetCaissier("Caisse 1")
+c <-- d : return true
+c -> l : Init("Caisse 1")
+c -> d : SetupLog()
+c ->d : OccuperCaisse("Caisse 1")
+@enduml
